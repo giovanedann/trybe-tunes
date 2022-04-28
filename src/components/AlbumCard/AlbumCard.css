@@ -1,0 +1,54 @@
+.album-link {
+  text-decoration: none;
+  color: white;
+}
+
+.album-card {
+  align-items: center;
+  border: 1px solid #181818;
+  background-color: #181818;
+  display: flex;
+  height: 150px;
+  justify-content: space-around;
+  margin: 20px;
+  width: 350px;
+  transition: 1s;
+}
+
+.album-card:hover {
+  transform: scale(1.1);
+}
+
+.album-card image {
+  width: 200px;
+  height: 200px;
+  border: 1px solid white;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-album-name {
+  word-wrap: break-word;
+  max-width: 100px;
+  max-height: 60px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 600;
+  text-align: start;
+  font-size: 17px;
+}
+
+.card-album-artist-name {
+  word-wrap: break-word;
+  max-width: 100px;
+  max-height: 28px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: start;
+  font-size: 12px;
+  font-weight: 500;
+}

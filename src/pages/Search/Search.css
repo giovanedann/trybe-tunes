@@ -1,0 +1,60 @@
+.search-container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.search-container input {
+  border-radius: 20px;
+  border: 1px solid black;
+  height: 25px;
+  margin-right: 10px;
+  padding: 5px;
+  width: 400px;
+  transition: 0.5s;
+}
+
+.search-container input:focus {
+  transform: scale(1.03);
+}
+
+.search-container button {
+  border-style: none;
+  border-radius: 12px;
+  padding: 10px;
+  width: 100px;
+  background-color: rgb(30, 117, 222);
+  color: white;
+  font-weight: 600;
+  transition: 0.5s;
+}
+
+.search-container button:disabled {
+  background-color: rgb(109, 106, 106);
+}
+
+.search-container button:hover:enabled {
+  background-color: rgb(51, 129, 224);
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.not-found {
+  text-align: center;
+}
+
+.albuns-results-text {
+  text-align: center;
+}
+
+.artist-name-span {
+  margin-left: 10px;
+}
+
+.artist-albuns {
+  align-items: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
