@@ -6,32 +6,44 @@ import { addSong, removeSong } from '../../services/favoriteSongsAPI';
 class MusicCard extends Component {
   constructor(props) {
     super(props);
-    const { isFav } = this.props;
     this.handleCheckBox = this.handleCheckBox.bind(this);
-    this.state = { loading: false, favorited: isFav };
+    this.loadFavoritedSongs = this.loadFavoritedSongs.bind(this);
+    this.state = { loading: false, favSongs: [] };
+  }
+
+  componentDidMount() {
+    this.loadFavoritedSongs();
   }
 
   async handleCheckBox({ target: { checked } }) {
-    const { currSong } = this.props;
+    const { currSong, updater } = this.props;
     this.setState({ loading: true });
     if (checked) {
       await addSong(currSong);
     } else {
       await removeSong(currSong);
+      updater();
     }
-    this.setState({ loading: false, favorited: checked });
+    this.setState({
+      loading: false,
+      favSongs: JSON.parse(localStorage.getItem('favorite_songs')),
+    });
+  }
+
+  loadFavoritedSongs() {
+    this.setState({ favSongs: JSON.parse(localStorage.getItem('favorite_songs')) });
   }
 
   render() {
     const { currSong } = this.props;
     const { trackName, previewUrl, trackId } = currSong;
-    const { loading, favorited } = this.state;
+    const { loading, favSongs } = this.state;
     return (
       <>
         { loading && <h2>Carregando...</h2> }
         { !loading && (
           <div key={ trackName } className="music-player">
-            <p>{ trackName }</p>
+            <p className="track-name">{ trackName }</p>
             <audio
               key={ trackName }
               data-testid="audio-component"
@@ -47,10 +59,10 @@ class MusicCard extends Component {
               Favorita
               <input
                 type="checkbox"
-                name="favorite-song"
+                id="favorite-song"
                 data-testid={ `checkbox-music-${trackId}` }
                 onChange={ this.handleCheckBox }
-                checked={ favorited }
+                checked={ favSongs.some((item) => item.trackId === trackId) }
               />
             </label>
           </div>
@@ -68,5 +80,9 @@ MusicCard.propTypes = {
     previewUrl: PropTypes.string.isRequired,
     trackId: PropTypes.number.isRequired,
   }).isRequired,
-  isFav: PropTypes.bool.isRequired,
+  updater: PropTypes.func,
+};
+
+MusicCard.defaultProps = {
+  updater: () => {},
 };

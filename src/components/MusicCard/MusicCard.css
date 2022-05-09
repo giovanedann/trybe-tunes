@@ -4,3 +4,7 @@
   justify-content: space-evenly;
   align-items: center;
 }
+
+.track-name {
+  text-align: center;
+}

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { SiApplemusic } from 'react-icons/si';
 import { Redirect } from 'react-router-dom';
-
 import { createUser } from '../../services/userAPI';
 import { Loading } from '../../components';
 import './Login.css';
@@ -18,17 +17,16 @@ class Login extends Component {
     };
   }
 
-  handleInputChange(e) {
-    const { target } = e;
-    this.setState({ user: target.value });
-  }
-
   async handleButtonClick() {
     this.setState({ loading: true }, async () => {
       const { user } = this.state;
       await createUser({ name: user });
       this.setState({ logged: true, loading: false });
     });
+  }
+
+  handleInputChange({ target: { value } }) {
+    this.setState({ user: value });
   }
 
   render() {
@@ -41,9 +39,9 @@ class Login extends Component {
         && (
           <form className="login-form">
             <div className="icons-container">
-              <SiApplemusic color="rgb(51, 49, 49)" size={ 90 } />
+              <SiApplemusic color="#E0398D" className="login-music-icon" />
             </div>
-            <span className="form-title">TrybeTunes</span>
+            <p className="form-title"><strong>trybe</strong>tunes</p>
             <input
               placeholder="Enter your username or e-mail"
               type="text"

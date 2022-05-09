@@ -1,0 +1,77 @@
+.profile-edit-container {
+  margin: 5rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-photo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-photo-container img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.profile-photo-container input {
+  width: 100%;
+  margin-top: 20px;
+  height: 20px;
+}
+
+.profile-edit-container form label {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+}
+
+.profile-edit-container form label > input {
+  margin-top: 10px;
+  height: 20px;
+}
+
+.profile-edit-container form textarea {
+  margin-top: 10px;
+}
+
+.profile-edit-container form textarea::placeholder {
+  font-family: ubuntu;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-container button {
+  border-style: none;
+  background-color: aliceblue;
+  border: 2px solid black;
+  width: 120px;
+  height: 35px;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: all 1s;
+}
+
+.button-container button:hover:enabled {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.button-container button:disabled {
+  cursor: default;
+  opacity: 80%;
+}
+
+.black-loading-element {
+  color: black;
+}

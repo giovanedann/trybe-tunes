@@ -9,7 +9,6 @@ class Album extends Component {
   constructor(props) {
     super(props);
     this.setSongsToState = this.setSongsToState.bind(this);
-    // this.handleFavoritedSong = this.handleFavoritedSong.bind(this);
     this.loadFavoriteSongs = this.loadFavoriteSongs.bind(this);
     this.state = {
       loading: true,
@@ -33,17 +32,17 @@ class Album extends Component {
       const { match } = this.props;
       const { params } = match;
       const { id } = params;
-      const musics = await getMusics(id);
+      const songs = await getMusics(id);
       const {
         artistName,
         artworkUrl100,
         collectionName,
         primaryGenreName,
         trackCount,
-      } = musics[0];
+      } = songs[0];
 
       this.setState({
-        songList: [...musics],
+        songList: [...songs],
         loading: false,
         artist: artistName,
         coverImage: artworkUrl100,
@@ -64,19 +63,19 @@ class Album extends Component {
   render() {
     const {
       loading,
-      songList,
       artist,
       coverImage,
       albumName,
       genre,
       tracks,
+      songList,
       favSongs,
     } = this.state;
 
     return (
       <div>
         <Header />
-        { loading && <Loading className="loading-element" /> }
+        { loading && <Loading className="black-loading-element" /> }
         { !loading && (
           <div className="album-content" data-testid="page-album">
             <div className="album-info">
@@ -88,7 +87,7 @@ class Album extends Component {
             </div>
             <div className="songs-container">
               { songList.map((song, index) => {
-                if (!index) { return; }
+                if (!index) { return null; }
                 const { trackName } = song;
                 return (
                   <MusicCard
