@@ -75,74 +75,76 @@ class ProfileEdit extends Component {
           { saved && <Redirect to="/profile" />}
           { loading && <Loading className="black-loading-element" />}
           { !loading && (
-            <form>
-              <div className="profile-photo-container">
-                <img
-                  src={
-                    !image.length
-                      ? 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUf9QPA3pe7BY91OIKO_4xqJfLRsPWJyHDRQ&usqp=CAU'
-                      : image
-                  }
-                  alt="profile"
-                />
-                <input
-                  type="text"
-                  name="image"
-                  defaultValue={ image }
-                  id="profile-picture"
-                  data-testid="edit-input-image"
-                  placeholder="Insert your profile image link"
-                  onChange={ this.handleInputChange }
-                />
-              </div>
-              <label htmlFor="name-edit-input">
-                Name
-                <input
-                  defaultValue={ name }
-                  name="name"
-                  type="text"
-                  id="name-edit-input"
-                  placeholder="Your name"
-                  data-testid="edit-input-name"
-                  onChange={ this.handleInputChange }
-                />
-              </label>
-              <label htmlFor="mail-edit-input">
-                E-mail
-                <input
-                  defaultValue={ email }
-                  name="email"
-                  type="text"
-                  id="mail-edit-input"
-                  placeholder="Your e-mail"
-                  data-testid="edit-input-email"
-                  onChange={ this.handleInputChange }
-                />
-              </label>
-              <label htmlFor="description-edit-input">
-                Description
-                <textarea
-                  id="description-edit-input"
-                  name="description"
-                  placeholder="Description"
-                  data-testid="edit-input-description"
-                  rows={ 5 }
-                  cols={ 30 }
-                  defaultValue={ description }
-                  onChange={ this.handleInputChange }
-                />
-              </label>
-              <div className="button-container">
-                <button
-                  type="button"
-                  data-testid="edit-button-save"
-                  disabled={ this.isFormInvalid() }
-                  onClick={ this.saveUserInfo }
-                >
-                  Save changes
-                </button>
-              </div>
-            </form>) }
+            <div className="edit-container">
+              <form>
+                <div className="profile-photo-container">
+                  <img
+                    src={
+                      !image.length
+                        ? 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUf9QPA3pe7BY91OIKO_4xqJfLRsPWJyHDRQ&usqp=CAU'
+                        : image
+                    }
+                    alt="profile"
+                  />
+                  <input
+                    type="text"
+                    name="image"
+                    defaultValue={ image }
+                    id="profile-picture"
+                    data-testid="edit-input-image"
+                    placeholder="Insert your profile image link"
+                    onChange={ this.handleInputChange }
+                  />
+                </div>
+                <label htmlFor="name-edit-input">
+                  Name
+                  <input
+                    defaultValue={ name }
+                    name="name"
+                    type="text"
+                    id="name-edit-input"
+                    placeholder="Your name"
+                    data-testid="edit-input-name"
+                    onChange={ this.handleInputChange }
+                  />
+                </label>
+                <label htmlFor="mail-edit-input">
+                  E-mail
+                  <input
+                    defaultValue={ email }
+                    name="email"
+                    type="text"
+                    id="mail-edit-input"
+                    placeholder="Your e-mail"
+                    data-testid="edit-input-email"
+                    onChange={ this.handleInputChange }
+                  />
+                </label>
+                <label htmlFor="description-edit-input">
+                  Description
+                  <textarea
+                    id="description-edit-input"
+                    name="description"
+                    placeholder="Description"
+                    data-testid="edit-input-description"
+                    rows={ 5 }
+                    cols={ 30 }
+                    defaultValue={ description }
+                    onChange={ this.handleInputChange }
+                  />
+                </label>
+                <div className="button-container">
+                  <button
+                    type="button"
+                    data-testid="edit-button-save"
+                    disabled={ this.isFormInvalid() }
+                    onClick={ this.saveUserInfo }
+                  >
+                    Save changes
+                  </button>
+                </div>
+              </form>
+            </div>) }
         </div>
       </>
     );
