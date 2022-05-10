@@ -79,3 +79,10 @@
     margin-top: 3rem;
   }
 }
+
+@media screen and (max-width: 500px) {
+  .search-container input {
+    width: 350px;
+    margin-right: 0;
+  }
+}

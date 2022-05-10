@@ -41,7 +41,7 @@ class MusicCard extends Component {
     const { loading, favSongs } = this.state;
     return (
       <>
-        { loading && <h2>Loading...</h2> }
+        { loading && <Loading className="black-loading-element"/> }
         { !loading && (
           <div key={ trackName } className="music-player">
             <p className="track-name">{ trackName }</p>
@@ -56,16 +56,17 @@ class MusicCard extends Component {
               <code>audio</code>
               .
             </audio>
+            <input
+              type="checkbox"
+              id="favorite-song"
+              data-testid={ `checkbox-music-${trackId}` }
+              onChange={ this.handleCheckBox }
+              checked={ favSongs.some((item) => item.trackId === trackId) }
+            />
             <label htmlFor="favorite-song">
-              Favorite Song
-              <input
-                type="checkbox"
-                id="favorite-song"
-                data-testid={ `checkbox-music-${trackId}` }
-                onChange={ this.handleCheckBox }
-                checked={ favSongs.some((item) => item.trackId === trackId) }
-              />
+              ❤
             </label>
+            <div className="music-card__pink-line"></div>
           </div>
         )}
       </>

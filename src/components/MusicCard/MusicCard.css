@@ -3,8 +3,49 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  margin: 20px 0;
+}
+
+.music-card__pink-line {
+  height: 3px;
+  border-radius: 20px;
+  width: 400px;
+  background: linear-gradient(0deg, rgba(248,142,154,1) 50%, rgba(240,13,126,1) 100%);
+  margin-top: 20px;
 }
 
 .track-name {
   text-align: center;
+  font-weight: 500;
+}
+
+.music-player input {
+  margin-top: 25px;
+  margin-left: 15px;
+  display: none;
+}
+
+.music-player label {
+  color: rgb(175, 173, 173);
+  cursor: pointer;
+  font-size: 40px;
+  transition: 0.5s ease-in-out;
+}
+
+.music-player label:hover {
+  color: rgb(112, 110, 110);
+}
+
+.music-player input:checked + label {
+  color:rgba(248,142,154,1);
+}
+
+@media screen and (max-width: 500px) {
+  .music-card__pink-line {
+    height: 3px;
+    border-radius: 20px;
+    width: 300px;
+    background: linear-gradient(0deg, rgba(248,142,154,1) 50%, rgba(240,13,126,1) 100%);
+    margin-top: 20px;
+  }
 }
