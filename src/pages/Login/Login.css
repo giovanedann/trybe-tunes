@@ -73,7 +73,8 @@
 }
 
 .form-title span {
-  background-color: #FA7D8B;
+  color: #FA7D8B;
+  margin-left: 5px;
 }
 
 .icons-container {
