@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './MusicCard.css';
+import { Loading } from '../'
 import { addSong, removeSong } from '../../services/favoriteSongsAPI';
 
 class MusicCard extends Component {
@@ -40,7 +41,7 @@ class MusicCard extends Component {
     const { loading, favSongs } = this.state;
     return (
       <>
-        { loading && <h2>Carregando...</h2> }
+        { loading && <h2>Loading...</h2> }
         { !loading && (
           <div key={ trackName } className="music-player">
             <p className="track-name">{ trackName }</p>
@@ -51,12 +52,12 @@ class MusicCard extends Component {
               controls
             >
               <track kind="captions" />
-              O seu navegador não suporta o elemento
+              Browser doesn't support audio the element
               <code>audio</code>
               .
             </audio>
             <label htmlFor="favorite-song">
-              Favorita
+              Favorite Song
               <input
                 type="checkbox"
                 id="favorite-song"
