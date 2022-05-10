@@ -32,13 +32,14 @@ class Header extends Component {
 
     return (
       <>
-        <header className="header-container" data-testid="header-component">
+        <div className="header-container" data-testid="header-component">
           <div className="left-side">
-            <BsMusicNoteBeamed color="white" size={ 24 } />
-            <h1>trybetunes</h1>
+            <BsMusicNoteBeamed color="black" size={ 24 } className="search-music-icon"/>
+            <h1>trybe<span>tunes</span></h1>
           </div>
-          {!name ? <Loading /> : <p data-testid="header-user-name">{name}</p>}
-        </header>
+          {!name ? <Loading className="black-loading-element"/> : <p className="user-name" data-testid="header-user-name">{name}</p>}
+        </div>
+        <div className="header__black-line"></div>
         <nav className="navigation-links">
           <Link to="/search" className="link" data-testid="link-to-search">
             <div>Search</div>
@@ -54,6 +55,7 @@ class Header extends Component {
             <div>Profile</div>
           </Link>
         </nav>
+        <div className="header__black-line"></div>
       </>
     );
   }
