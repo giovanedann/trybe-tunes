@@ -35,7 +35,7 @@ class Header extends Component {
         <div className="header-container" data-testid="header-component">
           <div className="left-side">
             <BsMusicNoteBeamed color="black" size={ 24 } className="search-music-icon"/>
-            <h1>trybe<span>tunes</span></h1>
+            <h1>my<span>tunes</span></h1>
           </div>
           {!name ? <Loading className="black-loading-element"/> : <p className="user-name" data-testid="header-user-name">{name}</p>}
         </div>

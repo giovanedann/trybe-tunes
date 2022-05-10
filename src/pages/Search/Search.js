@@ -33,8 +33,8 @@ class Search extends Component {
 
   isInputValid() {
     const { artist } = this.state;
-    const minLength = 2;
-    return artist.length < minLength;
+    const minInputLength = 2;
+    return artist.length < minInputLength;
   }
 
   render() {
@@ -44,6 +44,7 @@ class Search extends Component {
         <Header />
 
         { loading && <Loading color="black" style={ { textAlign: 'center' } } />}
+
         { !loading
           && (
             <div data-testid="page-search" className="search-container">
@@ -59,12 +60,13 @@ class Search extends Component {
                 disabled={ this.isInputValid() }
                 onClick={ this.handleSearchClick }
               >
-                Pesquisar
+                Search
               </button>
             </div>
           )}
 
-        {!albuns.length && <h2 className="not-found">Nenhum álbum foi encontrado</h2>}
+        {/* {!albuns.length && <h2 className="not-found">No albuns found 😢</h2>} */}
+
         {Boolean(albuns.length) && (
           <div className="albuns-container">
             <h2 className="albuns-results-text">

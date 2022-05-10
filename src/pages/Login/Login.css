@@ -56,7 +56,7 @@
 .login-form button:hover:enabled {
   cursor: pointer;
   transform: scale(1.12);
-  background-color: #E0398D;
+  background-color: #B9268A;
 }
 
 .login-form button:disabled {
@@ -70,6 +70,11 @@
   color: #E0398D;
   font-weight: 600;
   justify-content: center;
+}
+
+.form-title span {
+  color: #FA7D8B;
+
 }
 
 .icons-container {
