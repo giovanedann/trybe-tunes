@@ -41,7 +41,7 @@ class Login extends Component {
             <div className="icons-container">
               <SiApplemusic color="#E0398D" className="login-music-icon" />
             </div>
-            <p className="form-title"><strong>trybe</strong>tunes</p>
+            <p className="form-title">my<span>tunes</span></p>
             <input
               placeholder="Enter your username or e-mail"
               type="text"

@@ -52,6 +52,10 @@
   color: black;
 }
 
+.left-side h1 {
+  margin: 10px;
+}
+
 .left-side h1 span {
   color: #FA7D8B;
 }
