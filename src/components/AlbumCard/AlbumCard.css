@@ -12,12 +12,15 @@
   border-radius: 10px;
   margin: 20px;
   width: 350px;
-  transition: 1s;
+  transition: ease-in-out 0.5s;
 }
 
 .album-card:hover {
-  transform: scale(1.1);
-}
+  transform: translateZ(50px) scale(1.05);
+  box-shadow: 0 0 20px 0px rgba(248,142,154,1);
+  -webkit-transform: translateZ(50px) scale(1.05);
+  -webkit-box-shadow: 0 0 20px 0px rgba(248,142,154,1);
+  }
 
 .album-card img {
   width: 120px;
