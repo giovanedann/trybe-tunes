@@ -45,7 +45,7 @@ class Profile extends Component {
                   data-testid="profile-image"
                 />
                 <Link to="/profile/edit">
-                  <button type="button">Editar perfil</button>
+                  <button type="button">Edit Profile</button>
                 </Link>
               </div>
               <div className="profile-info">

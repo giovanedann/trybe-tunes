@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './MusicCard.css';
-import { Loading } from '../'
+import { Loading } from '../../components'
 import { addSong, removeSong } from '../../services/favoriteSongsAPI';
 
 class MusicCard extends Component {
@@ -41,7 +41,12 @@ class MusicCard extends Component {
     const { loading, favSongs } = this.state;
     return (
       <>
+<<<<<<< HEAD
         { loading && <Loading className="black-loading-element"/> }
+=======
+        { loading && <Loading className="black-loading-element" /> }
+        
+>>>>>>> profile-page
         { !loading && (
           <div key={ trackName } className="music-player">
             <p className="track-name">{ trackName }</p>
