@@ -41,7 +41,7 @@ class Profile extends Component {
                   src={ !image.length
                     ? 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUf9QPA3pe7BY91OIKO_4xqJfLRsPWJyHDRQ&usqp=CAU'
                     : image }
-                  alt="generic"
+                  alt={`${name}-profile`}
                   data-testid="profile-image"
                 />
                 <Link to="/profile/edit">

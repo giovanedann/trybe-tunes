@@ -33,15 +33,21 @@
   flex-direction: column;
   align-items: center;
   margin: 5rem 0;
-  width: 500px;
-  max-height: 570px;
+  padding: 2rem;
+  width: 450px;
+  max-height: 500px;
   overflow: auto;
   border: 3px solid;
-  border-image: linear-gradient(to bottom, rgba(240,13,126,1), rgba(248,142,154,1)) 1 100%
+  border-image: linear-gradient(to bottom, rgba(240,13,126,1), rgba(248,142,154,1)) 1 1;
 }
 
 .songs-container::-webkit-scrollbar {
-  width: 8px;
+  width: 0px;
+}
+
+.songs-container:hover::-webkit-scrollbar {
+  width: 5px;
+  transition: all 1s;
 }
 
 .songs-container::-webkit-scrollbar-thumb {

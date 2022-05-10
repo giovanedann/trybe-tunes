@@ -86,6 +86,7 @@ class Album extends Component {
               <p>{ `Tracks: ${tracks}` }</p>
             </div>
             <div className="songs-container">
+              <h3>Album songs</h3>
               { songList.map((song, index) => {
                 if (!index) { return null; }
                 const { trackName } = song;
