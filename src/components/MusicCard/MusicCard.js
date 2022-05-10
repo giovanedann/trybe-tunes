@@ -58,12 +58,12 @@ class MusicCard extends Component {
             </audio>
             <input
               type="checkbox"
-              id="favorite-song"
+              id={`favorite-song-${trackName}`}
               data-testid={ `checkbox-music-${trackId}` }
               onChange={ this.handleCheckBox }
               checked={ favSongs.some((item) => item.trackId === trackId) }
             />
-            <label htmlFor="favorite-song">
+            <label htmlFor={`favorite-song-${trackName}`}>
               ❤
             </label>
             <div className="music-card__pink-line"></div>
