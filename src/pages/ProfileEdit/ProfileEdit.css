@@ -6,6 +6,12 @@
   align-items: center;
 }
 
+.edit-container {
+  padding: 6rem;
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(248,142,154,1) 0%, rgba(240,13,126,1) 100%);
+}
+
 .profile-photo-container {
   display: flex;
   flex-direction: column;
@@ -21,22 +27,29 @@
 .profile-photo-container input {
   width: 100%;
   margin-top: 20px;
-  height: 20px;
+  height: 25px;
+  border: 0;
+  border-radius: 5px;
 }
 
 .profile-edit-container form label {
   display: flex;
   flex-direction: column;
   margin: 20px 0;
+  color: white;
 }
 
 .profile-edit-container form label > input {
   margin-top: 10px;
-  height: 20px;
+  height: 25px;
+  border: 0;
+  border-radius: 5px;
 }
 
 .profile-edit-container form textarea {
   margin-top: 10px;
+  border: 0;
+  border-radius: 5px;
 }
 
 .profile-edit-container form textarea::placeholder {
@@ -51,9 +64,10 @@
 
 .button-container button {
   border-style: none;
-  background-color: aliceblue;
-  border: 2px solid black;
+  background-color: black;
+  color: white;
   width: 120px;
+  font-family: poppins, sans-serif;
   height: 35px;
   border-radius: 5px;
   font-weight: 600;
@@ -61,7 +75,7 @@
 }
 
 .button-container button:hover:enabled {
-  background-color: black;
+  background-color: rgb(70, 69, 69);
   color: white;
   cursor: pointer;
   transform: scale(1.2);
@@ -69,9 +83,34 @@
 
 .button-container button:disabled {
   cursor: default;
+  background-color: rgb(187, 185, 185);
   opacity: 80%;
 }
 
-.black-loading-element {
-  color: black;
+@media screen and (max-width: 600px) {
+  .edit-container {
+    padding: 3rem;
+  }
+  
+  .profile-photo-container img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .edit-container {
+    margin: 20px;
+    padding: 3rem;
+    padding-bottom: 10rem;
+    width: 300px;
+    height: 400px;
+  }
+  
+  .profile-photo-container img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+  }
 }
