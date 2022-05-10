@@ -41,7 +41,7 @@ class MusicCard extends Component {
     const { loading, favSongs } = this.state;
     return (
       <>
-        { loading && <h2>Loading...</h2> }
+        { loading && <Loading className="black-loading-element" /> }
         { !loading && (
           <div key={ trackName } className="music-player">
             <p className="track-name">{ trackName }</p>
