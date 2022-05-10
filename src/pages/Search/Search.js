@@ -69,9 +69,9 @@ class Search extends Component {
 
         {Boolean(albuns.length) && (
           <div className="albuns-container">
-            {/* <h2 className="albuns-results-text">
+            <h2 className="albuns-results-text">
               { `Resultado de álbuns de: ${artist}`}
-            </h2> */}
+            </h2>
             <div className="artist-albuns">
               { albuns.map((queryItem, index) => {
                 const {

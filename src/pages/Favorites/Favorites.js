@@ -32,7 +32,7 @@ class Favorites extends Component {
         { !loading
         && (
           <div data-testid="page-favorites" className="favorites-page-container">
-            <h2>Músicas favoritas</h2>
+            <h2>Favorite Songs</h2>
             <div className="fav-songs-container">
               { favSongs.map((song) => {
                 const { trackName } = song;
