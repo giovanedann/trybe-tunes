@@ -16,10 +16,10 @@ class MusicCard extends Component {
     this.loadFavoritedSongs();
   }
 
-  async handleCheckBox({ target: { checked } }) {
+  async handleCheckBox({ target }) {
     const { currSong, updater } = this.props;
     this.setState({ loading: true });
-    if (checked) {
+    if (target.checked) {
       await addSong(currSong);
     } else {
       await removeSong(currSong);

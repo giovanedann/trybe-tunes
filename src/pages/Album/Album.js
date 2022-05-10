@@ -89,12 +89,11 @@ class Album extends Component {
               <h3>Album songs</h3>
               { songList.map((song, index) => {
                 if (!index) { return null; }
-                const { trackName } = song;
                 return (
                   <MusicCard
-                    key={ trackName }
-                    currSong={ { ...song } }
-                    isFav={ favSongs.some((item) => item.trackName === trackName) }
+                    key={ song.trackName }
+                    currSong={ song }
+                    isFav={ favSongs.some((item) => item.trackName === song.trackName) }
                   />
                 );
               })}
